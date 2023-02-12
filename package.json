@@ -15,6 +15,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
+    "@prettier/plugin-pug": "^2.4.1",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
     "filemanager-webpack-plugin": "^8.0.0",
@@ -28,6 +29,7 @@
     "mini-css-extract-plugin": "^2.7.2",
     "postcss-loader": "^7.0.2",
     "postcss-preset-env": "^8.0.1",
+    "prettier": "^2.8.4",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
     "sass": "^1.58.0",

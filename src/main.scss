@@ -1,15 +1,12 @@
-$font-size: 1rem;
-$font-color: lch(28 99 35);
+@import url("./styles/reset.css");
 
-html {
-  font-size: $font-size;
-  color: $font-color;
-  font-family: 'Roboto';
+body {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-.logo1 {
-  width: 10em;
-}
-.logo2 {
-  width: 10em;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

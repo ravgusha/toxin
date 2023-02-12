@@ -1,0 +1,17 @@
+include ../button/button.pug
+include ../logo/logo.pug
+
+- var links = ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"];
+
+header.header
+    +logo
+
+    nav.nav
+      ul.nav__list
+        each link in links
+          li.nav__item
+            a.nav__link.active(href="#")= link
+
+    .header__buttons
+      +button("Войти").header__buttons
+      +button("Зарегистрироваться").header__buttons
