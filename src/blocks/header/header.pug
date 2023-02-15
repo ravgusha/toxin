@@ -1,17 +1,13 @@
 include ../button/button.pug
 include ../logo/logo.pug
+include ../nav-list/nav-list.pug
 
-- var links = ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"];
+- var links = [{ name: "О нас", active: true }, { name: "Услуги", dropdown: true }, { name: "Вакансии" }, { name: "Новости" }, { name: "Соглашения", dropdown: true }];
 
 header.header
-    +logo
-
-    nav.nav
-      ul.nav__list
-        each link in links
-          li.nav__item
-            a.nav__link.active(href="#")= link
-
+  +logo
+  .header__right
+    +nav-list(links)
     .header__buttons
       +button("Войти").header__buttons
       +button("Зарегистрироваться").header__buttons
