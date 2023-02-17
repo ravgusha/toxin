@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-@import url("./styles/reset.css");
-// @import url("./styles/vars.scss");
+@import "./styles/vars.scss";
+@import "./styles/reset.css";
+@import "./blocks/button/button.scss";
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -8,7 +9,7 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 140px;
-  color: #1f2041;
+  color: $main;
 }
 
 .header {
@@ -29,6 +30,27 @@ body {
 .nav {
   &__list {
     display: flex;
+    align-items: center;
     gap: 20px;
+    color: $dark-50;
+  }
+
+  &__link.active {
+    color: $dark-75;
+    font-weight: 700;
+  }
+
+  &__link.dropdown::after {
+    position: relative;
+    top: -2px;
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-right: 0.2em solid $dark-50;
+    border-top: 0.2em solid $dark-50;
+    transform: rotate(135deg);
+    margin-right: 0.5em;
+    margin-left: 0.5em;
   }
 }

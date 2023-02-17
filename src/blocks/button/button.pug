@@ -1,4 +1,4 @@
 mixin button(text, disabled)
-  button(class!=attributes.class class=['button'])
+  button(class=['button'] class!=attributes.class)
     if text
       span.button__text= text
