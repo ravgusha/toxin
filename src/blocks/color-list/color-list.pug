@@ -1,0 +1,6 @@
+include ../color-item/color-item.pug
+
+mixin color-list(colors)
+  ul.color
+    each color in colors
+      +color-item(color)

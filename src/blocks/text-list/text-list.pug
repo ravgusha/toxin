@@ -1,0 +1,6 @@
+include ../text-item/text-item.pug
+
+mixin text-list(texts)
+  ul.text
+    each text in texts
+      +text-item(text)

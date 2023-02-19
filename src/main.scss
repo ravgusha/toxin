@@ -1,56 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 @import "./styles/vars.scss";
 @import "./styles/reset.css";
+
 @import "./blocks/button/button.scss";
+@import "./blocks/header/header.scss";
+@import "./blocks/nav-item/nav-item.scss";
+@import "./blocks/nav-list/nav-list.scss";
+@import "./blocks/logo/logo.scss";
+@import "./blocks/color-list/color-list.scss";
+@import "./blocks/color-item/color-item.scss";
+@import "./blocks/text-list/text-list.scss";
+@import "./blocks/text-item/text-item.scss";
+@import "./pages/colors-and-type.scss";
 
 body {
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 140px;
   color: $main;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  &__right {
-    display: flex;
-  }
-}
-
-.logo {
-  display: flex;
-  gap: 12.5px;
-}
-
-.nav {
-  &__list {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    color: $dark-50;
-  }
-
-  &__link.active {
-    color: $dark-75;
-    font-weight: 700;
-  }
-
-  &__link.dropdown::after {
-    position: relative;
-    top: -2px;
-    content: "";
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-right: 0.2em solid $dark-50;
-    border-top: 0.2em solid $dark-50;
-    transform: rotate(135deg);
-    margin-right: 0.5em;
-    margin-left: 0.5em;
-  }
 }

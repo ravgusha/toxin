@@ -1,0 +1,32 @@
+.text {
+  &__item {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__label {
+    color: $dark-25;
+    flex-basis: 37px;
+  }
+
+  &__main.text-header-1 {
+    font-weight: 700;
+  }
+
+  .text-header-1 {
+    font-size: 24px;
+  }
+
+  .text-header-2 {
+    font-size: 19px;
+  }
+
+  .text-header-3 {
+    font-size: 12px;
+  }
+
+  .text-body {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

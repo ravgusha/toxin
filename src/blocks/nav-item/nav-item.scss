@@ -1,0 +1,18 @@
+.nav__link.active {
+  color: $dark-75;
+  font-weight: 700;
+}
+
+.nav__link.dropdown::after {
+  content: "";
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-right: 0.2em solid $dark-50;
+  border-top: 0.2em solid $dark-50;
+  transform: rotate(135deg);
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
