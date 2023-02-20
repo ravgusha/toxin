@@ -1,2 +1,2 @@
-import './main.scss';
-// import './fonts/fonts.scss';
+import "./fonts/fonts.scss";
+import "./main.scss";
