@@ -1,15 +1,17 @@
 .text {
   &__item {
-    display: flex;
+    display: grid;
     gap: 30px;
+    grid-template-columns: 3.7rem 1fr;
+    padding-bottom: 5.1rem;
   }
 
   &__label {
     color: $dark-25;
-    flex-basis: 37px;
+    text-align: right;
   }
 
-  &__main.text-header-1 {
+  &__main {
     font-weight: 700;
   }
 
@@ -23,10 +25,13 @@
 
   .text-header-3 {
     font-size: 12px;
+    text-transform: uppercase;
   }
 
   .text-body {
     font-size: 14px;
     font-weight: 400;
+    padding-right: 8rem;
+    line-height: 2.3rem;
   }
 }

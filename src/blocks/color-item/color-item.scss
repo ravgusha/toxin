@@ -18,8 +18,11 @@ $colors: (
 }
 
 .color {
+  white-space: nowrap;
+
   &__item {
     display: flex;
+    align-items: center;
     gap: 40px;
   }
 
@@ -35,5 +38,6 @@ $colors: (
 
   &__name {
     font-weight: 700;
+    line-height: 3rem;
   }
 }

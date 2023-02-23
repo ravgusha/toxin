@@ -4,10 +4,11 @@ include ../nav-list/nav-list.pug
 
 - var links = [{ name: "О нас", active: true }, { name: "Услуги", dropdown: true }, { name: "Вакансии" }, { name: "Новости" }, { name: "Соглашения", dropdown: true }];
 
-header.header
+mixin header
+  header.header-example
   +logo
-  .header__right
+  .header-example__right
     +nav-list(links)
-    .header__buttons
+    .header-example__buttons
       +button("Войти").empty
       +button("Зарегистрироваться").full
