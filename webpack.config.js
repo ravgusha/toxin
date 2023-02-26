@@ -11,6 +11,7 @@ module.exports = {
     filename: "index.[contenthash].js",
     assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
   },
+  context: path.resolve(__dirname, "src"),
   module: {
     rules: [
       {
@@ -27,19 +28,16 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
         type: "asset/resource",
-      },
-      {
-        test: /\.svg$/,
-        type: "asset/resource",
-        generator: {
-          filename: path.join("icons", "[name].[contenthash][ext]"),
-        },
+        exclude: [
+          path.resolve(__dirname, "src/fonts"),
+        ],
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
         type: "asset",
+        include: [path.resolve(__dirname, "src/fonts")],
         generator: {
           filename: "fonts/[hash][ext][query]",
         },
