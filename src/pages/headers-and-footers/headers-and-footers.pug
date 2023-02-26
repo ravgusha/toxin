@@ -1,0 +1,20 @@
+include ../../blocks/header/header.pug
+
+-
+  var links = [
+  { name: "О нас", active: true }, 
+  { name: "Услуги", dropdown: true },
+  { name: "Вакансии" },
+  { name: "Новости" },
+  { name: "Соглашения", dropdown: true }
+  ];
+
+block meta
+  title Headers and footers
+
+block content
+  .headers-and-footers 
+    |
+    |
+    +header(links)
+    +header(links, "Юлий Цезарь")

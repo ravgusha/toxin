@@ -2,13 +2,14 @@ include ../button/button.pug
 include ../logo/logo.pug
 include ../nav-list/nav-list.pug
 
-- var links = [{ name: "О нас", active: true }, { name: "Услуги", dropdown: true }, { name: "Вакансии" }, { name: "Новости" }, { name: "Соглашения", dropdown: true }];
-
-mixin header
+mixin header(links, user)
   header.header-example
-  +logo
-  .header-example__right
-    +nav-list(links)
-    .header-example__buttons
-      +button("Войти").empty
-      +button("Зарегистрироваться").full
+    +logo
+    .header-example__right
+      +nav-list(links)
+      if user
+        p.header-example__user= user
+      else
+        .header-example__buttons
+          +button("Войти").empty
+          +button("Зарегистрироваться").full

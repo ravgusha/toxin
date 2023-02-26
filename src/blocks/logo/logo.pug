@@ -1,4 +1,6 @@
+include ../logo-icon/logo-icon.pug
+
 mixin logo
   .logo
-    include ../logo-icon/logo-icon.pug
-    img(src=require("./images/logo-text.svg"), alt="logo", class="logo__text")
+    +logo-icon
+    img.logo__text(src=require("./images/logo-text.svg"), alt="logo")

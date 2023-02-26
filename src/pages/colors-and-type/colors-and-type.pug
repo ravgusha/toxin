@@ -1,7 +1,7 @@
 //- extends ../layout.pug
 
-include ../blocks/color-list/color-list.pug
-include ../blocks/text-list/text-list.pug
+include ../../blocks/color-list/color-list.pug
+include ../../blocks/text-list/text-list.pug
 
 - var colors = [{name: "Dark Shade 100%", hash: "#1F2041", class: "dark-100"}, {name: 'Dark Shade 75%', hash: '#1F2041', class: "dark-75"}, {name: 'Dark Shade 50%', hash: '#1F2041', class: "dark-50"}, {name: 'Dark Shade 25%', hash: '#1F2041', class: "dark-25"}, {name: 'Dark Shade 5%', hash: '#1F2041', class: "dark-5"}, {name: 'Purple', hash: '#BC9CFF', class: "purple"}, {name: 'Green', hash: '#6FCF97', class: "green"}];
 - var texts = [{label: "H1", main: "This one is the sub-section or widget title", class: "text-header-1"}, {label: "H2", main: "Next one is the item title inside widgets", class: "text-header-2"}, {label: "H3", main: "This is a label or CTA text", class: "text-header-3"}, {label: "Body", main: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", class: "text-body"}];
@@ -11,5 +11,7 @@ block meta
 
 block content
   .colors-and-type 
+    |
+    |
     +color-list(colors)
     +text-list(texts)
