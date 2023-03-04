@@ -1,3 +1,6 @@
 mixin nav-item(link)
   li.nav__item
-    a.nav__link(class=link.active && "active", class=link.dropdown && "dropdown", href="#")= link.name
+    if link.name
+      a.nav__link(class=link.active && "active", class=link.dropdown && "dropdown", href="#")= link.name
+    else
+      a.nav__link(class=link.active && "active", class=link.dropdown && "dropdown", href="#")= link

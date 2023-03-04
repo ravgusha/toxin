@@ -1,7 +1,14 @@
 include ../nav-item/nav-item.pug
 
-mixin nav-list(links)
-  nav.nav
+mixin nav-list(links, type)
+  if (type === "header")
     ul.nav__list
       each link in links
         +nav-item(link)
+  if (type === "footer")
+    each link in links
+      .footer__nav
+        p.nav-list__title= link.title
+        ul.nav__list
+          each sublink in link.list
+            +nav-item(sublink)

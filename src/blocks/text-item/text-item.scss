@@ -15,23 +15,26 @@
     font-weight: 700;
   }
 
-  .text-header-1 {
-    font-size: 24px;
-  }
-
-  .text-header-2 {
-    font-size: 19px;
-  }
-
-  .text-header-3 {
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-
   .text-body {
-    font-size: 14px;
-    font-weight: 400;
     padding-right: 8rem;
     line-height: 2.3rem;
   }
+}
+
+.text-header-1 {
+  font-size: 24px;
+}
+
+.text-header-2 {
+  font-size: 19px;
+}
+
+.text-header-3 {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.text-body {
+  font-size: 14px;
+  font-weight: 400;
 }

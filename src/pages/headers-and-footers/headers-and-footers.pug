@@ -1,20 +1,26 @@
 include ../../blocks/header/header.pug
+include ../../blocks/footer/footer.pug
 
 -
-  var links = [
+  var headerLinks = [
   { name: "О нас", active: true }, 
   { name: "Услуги", dropdown: true },
   { name: "Вакансии" },
   { name: "Новости" },
   { name: "Соглашения", dropdown: true }
   ];
+-
+  var footerLinks = [
+    {title: "Навигация", list: ["О нас", "Новости", "Служба поддержки", "Услуги"]},
+    {title: "О нас", list: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"]},
+    {title: "Служба поддержки", list: ["Соглашения", "Сообщества", "Связь с нами"]}
+  ]
 
 block meta
   title Headers and footers
 
 block content
   .headers-and-footers 
-    |
-    |
-    +header(links)
-    +header(links, "Юлий Цезарь")
+    +header(headerLinks)
+    +header(headerLinks, "Юлий Цезарь")
+    +footer(footerLinks)

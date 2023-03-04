@@ -1,0 +1,15 @@
+include ../logo/logo.pug
+include ../nav-list/nav-list.pug
+
+mixin footer(links)
+  footer.footer
+    .footer__block
+      +logo.footer__logo
+      .footer__decsription
+        | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+    .footer__block.footer__block_nav
+      +nav-list(links, "footer")
+    .footer__block
+      p.text-header-3
+        | Получайте специальные предложения и новости сервиса
+      input(type="text", name="subscribe")

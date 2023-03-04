@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+
+  &__block {
+    &_nav {
+      display: flex;
+    }
+  }
+
+  .nav__list {
+    flex-direction: column;
+  }
+}

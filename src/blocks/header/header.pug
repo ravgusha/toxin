@@ -6,7 +6,7 @@ mixin header(links, user)
   header.header-example
     +logo
     .header-example__right
-      +nav-list(links)
+      +nav-list(links, "header")
       if user
         p.header-example__user= user
       else
