@@ -1,10 +1,39 @@
 .footer {
   display: flex;
+  background-color: #fff;
+  padding: 10.4rem 14rem;
+
+  &__nav {
+    min-width: 150px;
+  }
 
   &__block {
     &_nav {
       display: flex;
+      padding-top: 6px;
+      gap: 50px;
+      line-height: 16px;
+      margin-right: 50px;
+
+      .nav__list {
+        align-items: flex-start;
+      }
     }
+
+    &_subscribe {
+      padding-top: 6px;
+    }
+    
+
+    &.footer__decsription {
+      width: 26rem;
+      margin-right: 4rem;
+
+      .logo {
+        padding-bottom: 20px;
+      }
+    }
+    
   }
 
   .nav__list {

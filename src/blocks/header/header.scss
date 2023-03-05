@@ -1,10 +1,9 @@
 .header-example {
-  color: $dark-50;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  padding: 1.8rem 14rem;
+  padding: 1.3rem 14rem;
 
   &__user {
     border-left: 1px solid $dark-1;

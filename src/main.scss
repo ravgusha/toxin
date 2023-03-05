@@ -7,12 +7,15 @@
 @import "./blocks/nav-item/nav-item.scss";
 @import "./blocks/nav-list/nav-list.scss";
 @import "./blocks/logo/logo.scss";
+@import "./blocks/input/input.scss";
 @import "./blocks/color-list/color-list.scss";
 @import "./blocks/color-item/color-item.scss";
 @import "./blocks/text-list/text-list.scss";
 @import "./blocks/text-item/text-item.scss";
 @import "./pages/colors-and-type/colors-and-type.scss";
 @import "./pages/headers-and-footers/headers-and-footers.scss";
+
+
 
 html {
   font-size: 10px;
@@ -27,7 +30,7 @@ body {
 }
 
 header.header {
-  padding: 3rem;
+  padding: 3rem 3rem 6rem;
 
   .logo__icon {
     width: 48px;

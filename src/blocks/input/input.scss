@@ -4,40 +4,45 @@
   display: block;
   margin-bottom: 1rem;
 
-  &__name {
-    @include field-name;
-  }
+  // &__name {
+  //   @include field-name;
+  // }
 
   &__input-wrap {
     display: block;
   }
 
   &__input {
-    @include field-text;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    margin: 0;
+    // border: 1px solid $border-color;
+    // border-radius: $border-radius;
+    // padding: $field-padding-vertical $field-padding-horizontal;
+    line-height: $line-height;
+    font-size: 1em;
+    font-family: inherit;
+    background-color: #fff;
+    -moz-appearance: textfield; // stylelint-disable-line
+    appearance: textfield;
 
-    @at-root textarea#{&} {
-      $textarea-height: ($line-height * 2) + ($field-padding-vertical * 2);
+    // &[disabled],
+    // &[readonly] {
+    //   cursor: not-allowed;
+    //   background-color: $gray-lighter;
+    // }
 
-      height: auto;
-      min-height: calc(#{$textarea-height} + 2px);
-      resize: vertical;
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration,
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none; // stylelint-disable-line  property-no-vendor-prefix
     }
-  }
 
-  &__help-text {
-    @include field-help-text;
-  }
-
-  &--error {
-    #{$block-name}__name,
-    #{$block-name}__input,
-    #{$block-name}__help-text {
-      color: $color-danger;
-    }
-
-    #{$block-name}__input {
-      border-color: $color-danger;
-      background-color: lighten($color-danger, 35%);
+    &::placeholder {
+      // color: $text-color-muted;
+      opacity: 1;
     }
   }
 }
