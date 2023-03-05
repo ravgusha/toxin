@@ -1,6 +1,10 @@
-.nav__link.active {
-  color: $dark-75;
-  font-weight: 700;
+.nav__link {
+  color: $dark-50;
+
+  &.active {
+    color: $dark-75;
+    font-weight: 700;
+  }
 }
 
 .nav__link.dropdown::after {

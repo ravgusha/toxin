@@ -8,7 +8,7 @@ mixin nav-list(links, type)
   if (type === "footer")
     each link in links
       .footer__nav
-        p.nav-list__title= link.title
+        p.nav__title.text-header-3= link.title
         ul.nav__list
           each sublink in link.list
             +nav-item(sublink)
