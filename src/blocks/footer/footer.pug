@@ -4,7 +4,7 @@ include ../input/input.pug
 
 mixin footer(links)
   footer.footer
-    .footer__block.footer__decsription
+    .footer__block.footer__block_description
       +logo.footer
       .footer__text.text-body 
         | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
@@ -15,4 +15,5 @@ mixin footer(links)
         | Подписка
       p.text-body
         | Получайте специальные предложения и новости сервиса
-      +input({ title: '', mods: '', val: 'Email', attrs: { name: 'subscribe', } })
+      +input({ title: '', mods: '', attrs: { name: 'subscribe', placeholder: "Email"} })
+      <span class="material-icons">arrow_forward</span>

@@ -1,8 +1,5 @@
-.field-text {
-  $block-name: &; // #{$block-name}__element
-
+.text-input {
   display: block;
-  margin-bottom: 1rem;
 
   // &__name {
   //   @include field-name;
@@ -17,15 +14,16 @@
     vertical-align: middle;
     width: 100%;
     margin: 0;
-    // border: 1px solid $border-color;
-    // border-radius: $border-radius;
-    // padding: $field-padding-vertical $field-padding-horizontal;
+    height: 44px;
+    border: 1px solid $dark-25;
+    border-radius: 4px;
+    padding-left: 1.4rem;
     line-height: $line-height;
     font-size: 1em;
     font-family: inherit;
-    background-color: #fff;
-    -moz-appearance: textfield; // stylelint-disable-line
-    appearance: textfield;
+    // background-color: #fff;
+    // -moz-appearance: textfield; // stylelint-disable-line
+    // appearance: textfield;
 
     // &[disabled],
     // &[readonly] {
@@ -41,8 +39,8 @@
     }
 
     &::placeholder {
-      // color: $text-color-muted;
-      opacity: 1;
+      color: $dark-25;
+      // opacity: 1;
     }
   }
 }

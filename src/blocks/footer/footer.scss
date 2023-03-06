@@ -8,6 +8,9 @@
   }
 
   &__block {
+    flex-grow: 1;
+    flex-shrink: 0;
+
     &_nav {
       display: flex;
       padding-top: 6px;
@@ -22,10 +25,14 @@
 
     &_subscribe {
       padding-top: 6px;
-    }
-    
+      flex-shrink: 1;
 
-    &.footer__decsription {
+      .text-body {
+        padding: 2rem 0 2.3rem 0;
+      }
+    }
+
+    &_description {
       width: 26rem;
       margin-right: 4rem;
 
@@ -33,7 +40,6 @@
         padding-bottom: 20px;
       }
     }
-    
   }
 
   .nav__list {
