@@ -8,23 +8,12 @@
     font-weight: 700;
     font-size: 12px;
     text-transform: uppercase;
-    padding: 10px 22px;
+    padding: 9px 20px;
     line-height: 15px;
   }
 
   &.empty {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
-    height: 35px;
-    position: relative;
-    padding: 0%;
-    color: $purple;
-    background: #fff;
-    background-clip: padding-box; 
-    border: solid 2px transparent; 
-    border-radius: 22px;
+
 
     &:before {
       content: "";

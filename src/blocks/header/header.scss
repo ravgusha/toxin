@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  padding: 1.3rem 14rem;
+  padding: 1.5rem 14rem;
+  box-shadow: 0px 10px 20px $dark-5;
 
   &__user {
     border-left: 1px solid $dark-1;

@@ -45,4 +45,17 @@
   .nav__list {
     flex-direction: column;
   }
+
+  .text-input {
+    position: relative;
+
+    .material-icons {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background: linear-gradient(180deg, $purple 0%, $blue 100%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
 }
