@@ -1,19 +1,23 @@
 include ../logo/logo.pug
 include ../nav-list/nav-list.pug
 include ../input/input.pug
+include ../footer-bottom/footer-bottom.pug
 
 mixin footer(links)
   footer.footer
-    .footer__block.footer__block_description
-      +logo.footer
-      .footer__text.text-body 
-        | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-    .footer__block.footer__block_nav
-      +nav-list(links, "footer")
-    .footer__block.footer__block_subscribe
-      p.text-header-3
-        | Подписка
-      p.text-body
-        | Получайте специальные предложения и новости сервиса
-      +input({ title: '', mods: '', icon: "arrow_forward", attrs: { name: 'subscribe', placeholder: "Email"} })
-      
+    .footer__main 
+      |
+      .footer__block.footer__block_description
+        +logo.footer
+        .footer__text.text-body 
+          |
+          | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+      .footer__block.footer__block_nav
+        +nav-list(links, "footer")
+      .footer__block.footer__block_subscribe
+        p.text-header-3
+          | Подписка
+        p.text-body
+          | Получайте специальные предложения и новости сервиса
+        +input({ title: '', mods: '', icon: "arrow_forward", attrs: { name: 'subscribe', placeholder: "Email"} })
+    +footer-bottom
