@@ -25,3 +25,12 @@
     url("./MaterialIcons-Regular.ttf") format("truetype"),
     url("./MaterialIcons-Regular.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Font Awesome 5 Brands Regular";
+  src: url("Font Awesome 5 Brands Regular.woff") format("woff"),
+    url("Font Awesome 5 Brands Regular.svg") format("svg"),
+    url("Font Awesome 5 Brands Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
