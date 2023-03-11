@@ -1,5 +1,9 @@
-mixin footer-bottom
-  .footer-bottom
+include ../logo/logo.pug
+
+mixin footer-bottom(size)
+  .footer-bottom(class= size)
+    if (size === "small")
+      +logo
     p.text-body
       | Copyright © 2018 Toxin отель. Все права защищены.
     .social-media
