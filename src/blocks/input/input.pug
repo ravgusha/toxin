@@ -3,6 +3,7 @@ mixin input(props)
   //-   props {
   //-     title: ''         {string} - текст с названием (выводится над полем)
   //-     mods: ''          {string} - модификаторы блока
+  //-     helpText: ''      {string} - пояснение над полем
   //-     icon: ''          {string} - иконка 
   //-     val: ''           {string} - текст в поле
   //-     attrs:            {object} - любые атрибуты для input/textarea
@@ -19,14 +20,18 @@ mixin input(props)
         allMods = allMods + ' text-input_' + modsList[i].trim();
       }
     }
-  label.text-input(class=allMods)&attributes(attributes)
-    if (typeof(props.title) !== 'undefined' && props.title)
-      span.text-input__name!= props.title
-    span.text-input__wrap
+  form.text-input(class=allMods)&attributes(attributes)
+    .text-input__header
+      if (typeof(props.title) !== 'undefined' && props.title)
+        span.text-header-3.text-input__name!= props.title
+      if (typeof(props.helpText) !== 'undefined' && props.helpText)
+        span.text-input__help-text!= props.helpText
+    .text-input__wrap
       input.text-input__input(
         type=typeof props.attrs !== "undefined" && props.attrs.type ? props.attrs.type : "text",
         value=props.val
       )&attributes(props.attrs)
     if (typeof(props.icon) !== 'undefined' && props.icon)
       span.material-icons= props.icon
+
       block

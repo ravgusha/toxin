@@ -1,0 +1,15 @@
+extends ../../layout.pug
+include ../../blocks/input/input.pug
+
+block meta
+  title Form elements
+
+block content
+  .form-elements
+    .form-block.col-1
+      +input({ title: 'Text Field', helpText: "default", attrs: { name: 'subscribe', placeholder: "Email"} })
+      +input({ title: 'Text Field', helpText: "hover / focus", val: "This is pretty awesome", attrs: { name: 'subscribe', placeholder: "Email", autofocus: ""} })
+    .form-block.col-2
+      | 123
+    .form-block.col-3
+      | 123

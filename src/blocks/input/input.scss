@@ -5,6 +5,19 @@
   //   @include field-name;
   // }
 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+  }
+
+  &__help-text {
+    font-size: 12px;
+    color: $dark-75;
+  }
+
   &__input-wrap {
     display: block;
   }
@@ -31,6 +44,12 @@
     //   background-color: $gray-lighter;
     // }
 
+    &:focus,
+    &:active {
+      outline: none;
+      border: 1px solid $dark-50;
+    }
+
     &::-webkit-search-cancel-button,
     &::-webkit-search-decoration,
     &::-webkit-inner-spin-button,
@@ -41,6 +60,18 @@
     &::placeholder {
       color: $dark-25;
       // opacity: 1;
+    }
+  }
+
+  &__help-text {
+    // display: block;
+    // padding-top: 0.4em;
+    // // font-size: $font-size-sm;
+    // line-height: 1.2em;
+    // // color: $text-color-muted;
+
+    &:empty {
+      display: none;
     }
   }
 }

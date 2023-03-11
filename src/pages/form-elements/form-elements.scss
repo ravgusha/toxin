@@ -1,0 +1,12 @@
+main {
+  .form-elements {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    gap: 12rem;
+    padding: 0 140px;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+}
