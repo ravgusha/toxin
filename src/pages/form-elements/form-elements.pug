@@ -7,8 +7,10 @@ block meta
 block content
   .form-elements
     .form-block.col-1
-      +input({ title: 'Text Field', helpText: "default", attrs: { name: 'subscribe', placeholder: "Email"} })
-      +input({ title: 'Text Field', helpText: "hover / focus", val: "This is pretty awesome", attrs: { name: 'subscribe', placeholder: "Email", autofocus: ""} })
+      +input({ title: 'Text field', helpText: "default", attrs: { name: 'subscribe', placeholder: "Email"} })
+      +input({ title: 'Text field', helpText: "hover / focus", val: "This is pretty awesome", attrs: { name: 'subscribe', placeholder: "Email", autofocus: ""} })
+      +input({ title: 'Masked text field', mods: "masked", attrs: { id: 'maskedDate', placeholder: "ДД.ММ.ГГГГ"}})
+      +input({ title: 'Subscription text field', mods: "iconed", icon:"arrow_forward", attrs: { placeholder: "Email"} })
     .form-block.col-2
       | 123
     .form-block.col-3
