@@ -1,0 +1,27 @@
+.like-button {
+  font-size: 10px;
+  color: rgba(31, 32, 65, 0.25);
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &.isLiked {
+    border: 1px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(180deg, $purple 0%, $blue 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    color: $purple;
+  }
+
+  &__icon {
+    color: rgba(31, 32, 65, 0.25);
+    font-size: 11px !important;
+    padding: 2px 7px 2px 2px;
+  }
+
+  &__count {
+    padding-right: 10px;
+  }
+}

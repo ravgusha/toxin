@@ -1,0 +1,8 @@
+mixin like-button(count, isLiked)
+  button.like-button(class=isLiked ? "isLiked" : "")
+    i.like-button__icon.material-icons.material-icons-outlined
+      | favorite_border
+    if count
+      span.like-button__count= count
+    else
+      span.like-button__count= 0
