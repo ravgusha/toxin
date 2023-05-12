@@ -3,6 +3,7 @@ const FileManagerPlugin = require("filemanager-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const path = require("path");
+const webpack = require('webpack');
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
@@ -30,9 +31,7 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
         type: "asset/resource",
-        exclude: [
-          path.resolve(__dirname, "src/fonts"),
-        ],
+        exclude: [path.resolve(__dirname, "src/fonts")],
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
@@ -66,6 +65,10 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
     }),
   ],
   devServer: {

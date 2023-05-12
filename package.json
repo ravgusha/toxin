@@ -41,6 +41,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "inputmask": "^5.0.8"
+    "inputmask": "^5.0.8",
+    "jquery": "^3.7.0"
   }
 }
