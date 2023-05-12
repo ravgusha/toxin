@@ -1,4 +1,4 @@
-.text-input {
+.input {
   display: block;
 
   &_iconed {
@@ -32,7 +32,7 @@
     -webkit-text-fill-color: transparent;
   }
 
-  &__input {
+  &__control {
     display: inline-block;
     vertical-align: middle;
     width: 100%;
@@ -44,15 +44,6 @@
     line-height: $line-height;
     font-size: 1em;
     font-family: inherit;
-    // background-color: #fff;
-    // -moz-appearance: textfield; // stylelint-disable-line
-    // appearance: textfield;
-
-    // &[disabled],
-    // &[readonly] {
-    //   cursor: not-allowed;
-    //   background-color: $gray-lighter;
-    // }
 
     &:focus,
     &:active {
@@ -69,19 +60,59 @@
 
     &::placeholder {
       color: $dark-25;
-      // opacity: 1;
     }
   }
 
   &__help-text {
-    // display: block;
-    // padding-top: 0.4em;
-    // // font-size: $font-size-sm;
-    // line-height: 1.2em;
-    // // color: $text-color-muted;
-
     &:empty {
       display: none;
     }
   }
+}
+
+.input__wrap input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.input__wrap label {
+  position: relative;
+  cursor: pointer;
+}
+
+.input__wrap label:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1px solid $dark-25;
+  border-radius: 3px;
+  padding: 9px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.input__wrap input:checked + label:before {
+  border-color: $purple;
+}
+
+.input__wrap input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 6px;
+  height: 8px;
+  border: solid;
+  border-image: linear-gradient(180deg, $purple 0%, $blue 100%);
+  border-image-slice: 1;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }

@@ -17,21 +17,24 @@ mixin input(props)
     if(typeof(props.mods) !== 'undefined' && props.mods) {
       let modsList = props.mods.split(',');
       for (let i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' text-input_' + modsList[i].trim();
+        allMods = allMods + ' input_' + modsList[i].trim();
       }
     }
-  form.text-input(class=allMods)&attributes(attributes)
-    .text-input__header
+  form.input(class=allMods)&attributes(attributes)
+    .input__header
       if (typeof(props.title) !== 'undefined' && props.title)
-        span.text-header-3.text-input__name!= props.title
+        span.text-header-3.input__name!= props.title
       if (typeof(props.helpText) !== 'undefined' && props.helpText)
-        span.text-input__help-text!= props.helpText
-    .text-input__wrap
-      input.text-input__input(
+        span.input__help-text!= props.helpText
+    .input__wrap
+      input.input__control(
         type=typeof props.attrs !== "undefined" && props.attrs.type ? props.attrs.type : "text",
         value=props.val
       )&attributes(props.attrs)
+      if (props.attrs.type === 'checkbox')
+        label.text-body(for=`${props.attrs.id}`)
+          | Можно курить
       if (typeof(props.icon) !== 'undefined' && props.icon)
-      span.material-icons.text-input__icon= props.icon
+        span.material-icons.input__icon= props.icon
 
       block
