@@ -4,6 +4,8 @@ mixin input(props)
   //-     title: ''         {string} - текст с названием (выводится над полем)
   //-     mods: ''          {string} - модификаторы блока
   //-     helpText: ''      {string} - пояснение над полем
+  //-     checkboxLabel: '' {string} - описание чек-бокса 
+  //-     isChecked: ''     {boolean}- отмечен ли чек-бокс
   //-     icon: ''          {string} - иконка 
   //-     val: ''           {string} - текст в поле
   //-     attrs:            {object} - любые атрибуты для input/textarea
@@ -29,11 +31,11 @@ mixin input(props)
     .input__wrap
       input.input__control(
         type=typeof props.attrs !== "undefined" && props.attrs.type ? props.attrs.type : "text",
-        value=props.val
+        value=props.val,
+        checked=props.isChecked
       )&attributes(props.attrs)
-      if (props.attrs.type === 'checkbox')
-        label.text-body(for=`${props.attrs.id}`)
-          | Можно курить
+      if (props.attrs.type === 'checkbox' | props.attrs.type === 'radio')
+        label.text-body(for=`${props.attrs.id}`)= props.checkboxLabel
       if (typeof(props.icon) !== 'undefined' && props.icon)
         span.material-icons.input__icon= props.icon
 

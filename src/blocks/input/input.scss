@@ -55,7 +55,7 @@
     &::-webkit-search-decoration,
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
-      -webkit-appearance: none; // stylelint-disable-line  property-no-vendor-prefix
+      -webkit-appearance: none;
     }
 
     &::placeholder {
@@ -68,51 +68,99 @@
       display: none;
     }
   }
-}
 
-.input__wrap input {
-  padding: 0;
-  height: initial;
-  width: initial;
-  margin-bottom: 0;
-  display: none;
-  cursor: pointer;
-}
+  &_checkbox {
+    margin-bottom: 0;
 
-.input__wrap label {
-  position: relative;
-  cursor: pointer;
-}
+    .input__wrap {
+      input {
+        padding: 0;
+        height: initial;
+        width: initial;
+        margin-bottom: 0;
+        display: none;
+        cursor: pointer;
 
-.input__wrap label:before {
-  content: "";
-  -webkit-appearance: none;
-  background-color: transparent;
-  border: 1px solid $dark-25;
-  border-radius: 3px;
-  padding: 9px;
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  cursor: pointer;
-  margin-right: 5px;
-}
+        &:checked + label:before {
+          border-color: $purple;
+        }
 
-.input__wrap input:checked + label:before {
-  border-color: $purple;
-}
+        &:checked + label:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 7px;
+          left: 7px;
+          width: 6px;
+          height: 8px;
+          border: solid;
+          border-image: linear-gradient(180deg, $purple 0%, $blue 100%);
+          border-image-slice: 1;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+      }
 
-.input__wrap input:checked + label:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 7px;
-  left: 7px;
-  width: 6px;
-  height: 8px;
-  border: solid;
-  border-image: linear-gradient(180deg, $purple 0%, $blue 100%);
-  border-image-slice: 1;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+      label {
+        position: relative;
+        cursor: pointer;
+
+        &:before {
+          content: "";
+          -webkit-appearance: none;
+          background-color: transparent;
+          border: 1px solid $dark-25;
+          border-radius: 3px;
+          padding: 9px;
+          display: inline-block;
+          position: relative;
+          vertical-align: middle;
+          cursor: pointer;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  &_radio {
+    .input__wrap {
+      padding-bottom: 50px;
+      input {
+        position: relative;
+        width: auto;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ label:after {
+          display: block;
+        }
+      }
+
+      label {
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 25px;
+          width: 25px;
+          background-color: #eee;
+          border-radius: 50%;
+          border: 1px solid $purple;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+          top: 4px;
+          left: 4px;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background: linear-gradient(180deg, $purple 0%, $blue 100%);
+        }
+      }
+    }
+  }
 }

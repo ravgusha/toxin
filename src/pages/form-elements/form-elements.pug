@@ -16,6 +16,13 @@ block content
     .form-block.col-2
       +like-button(2)
       +like-button(12, true)
-      +input({ title: 'Checkbox Buttons', attrs: { type: "checkbox", id: "smoke"} })
+      span.text-header-3
+        | Checkbox Buttons
+      +input({mods: "checkbox", checkboxLabel: "Можно курить", attrs: { type: "checkbox", id: "smoke"} })
+      +input({mods: "checkbox", isChecked: "true", checkboxLabel: "Можно с питомцами", attrs: { type: "checkbox", id: "pet"} })
+      +input({mods: "checkbox", isChecked: "true", checkboxLabel: "Можно пришасить гостей (до 10 человек)", attrs: { type: "checkbox", id: "guests"} })
+      +input({mods: "radio", checkboxLabel: "Женщина", attrs: { type: "radio", id: "female", name: "sex"} })
+      +input({mods: "radio", checkboxLabel: "Мужчина", attrs: { type: "radio", id: "male", name: "sex"} })
+      //- +input({mods: "checkbox", checkboxLabel: "Можно пришасить гостей (до 10 человек)", attrs: { type: "checkbox", id: "guests"} })
   .form-block.col-3
     | 123
