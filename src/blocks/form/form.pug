@@ -1,0 +1,15 @@
+include ../../blocks/input/input.pug
+
+mixin form(title, helpText, inputs)
+  //- Принимает:
+  //-   title: ''         {string} - текст с названием (выводится над полем)
+  //-   helpText: ''      {string} - пояснение над полем
+
+  form.form(class=allMods)&attributes(attributes)
+    .form__header
+      if (typeof(title) !== 'undefined' && title)
+        span.text-header-3.input__name!= title
+      if (typeof(helpText) !== 'undefined' && helpText)
+        span.input__help-text!= helpText
+        each input in inputs
+          //- +input(input)

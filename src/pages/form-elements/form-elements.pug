@@ -2,6 +2,11 @@ extends ../../layout.pug
 include ../../blocks/input/input.pug
 include ../../blocks/like-button/like-button.pug
 include ../../blocks/button/button.pug
+include ../../blocks/form/form.pug
+
+block variables
+  - inputs = [{ attrs: { name: 'subscribe', placeholder: "Email"}}, { val: "This is pretty awesome", attrs: { name: 'subscribe', autofocus: ""}}, { mods: "masked", attrs: { id: 'maskedDate', placeholder: "ДД.ММ.ГГГГ"}}, { mods: "iconed", icon:"arrow_forward", attrs: { placeholder: "Email"}}];
+
 
 block meta
   title Form elements
@@ -9,20 +14,24 @@ block meta
 block content
   .form-elements
     .form-block.col-1
-      +input({ title: 'Text field', helpText: "default", attrs: { name: 'subscribe', placeholder: "Email"} })
-      +input({ title: 'Text field', helpText: "hover / focus", val: "This is pretty awesome", attrs: { name: 'subscribe', autofocus: ""} })
-      +input({ title: 'Masked text field', mods: "masked", attrs: { id: 'maskedDate', placeholder: "ДД.ММ.ГГГГ"}})
-      +input({ title: 'Subscription text field', mods: "iconed", icon:"arrow_forward", attrs: { placeholder: "Email"} })
-    .form-block.col-2
-      +like-button(2)
-      +like-button(12, true)
-      span.text-header-3
-        | Checkbox Buttons
-      +input({mods: "checkbox", checkboxLabel: "Можно курить", attrs: { type: "checkbox", id: "smoke"} })
-      +input({mods: "checkbox", isChecked: "true", checkboxLabel: "Можно с питомцами", attrs: { type: "checkbox", id: "pet"} })
-      +input({mods: "checkbox", isChecked: "true", checkboxLabel: "Можно пришасить гостей (до 10 человек)", attrs: { type: "checkbox", id: "guests"} })
-      +input({mods: "radio", checkboxLabel: "Женщина", attrs: { type: "radio", id: "female", name: "sex"} })
-      +input({mods: "radio", checkboxLabel: "Мужчина", attrs: { type: "radio", id: "male", name: "sex"} })
-      //- +input({mods: "checkbox", checkboxLabel: "Можно пришасить гостей (до 10 человек)", attrs: { type: "checkbox", id: "guests"} })
-  .form-block.col-3
+      //- +input({ title: 'Text field', helpText: "default", attrs: { name: 'subscribe', placeholder: "Email"} })
+      //- +input({ title: 'Text field', helpText: "hover / focus", val: "This is pretty awesome", attrs: { name: 'subscribe', autofocus: ""} })
+      //- +input({ title: 'Masked text field', mods: "masked", attrs: { id: 'maskedDate', placeholder: "ДД.ММ.ГГГГ"}})
+      //- +input
+      +form('Text field', "default", )
+      //- +form('Text field', "hover / focus")
+      //- +form('Masked text field')
+      //- +form('Subscription text field')
+  //-   .form-block.col-2
+  //-     +like-button(2)
+  //-     +like-button(12, true)
+  //-     span.text-header-3
+  //-       | Checkbox Buttons
+  //-     +input({mods: "checkbox", checkboxLabel: "Можно курить", attrs: { type: "checkbox", id: "smoke"} })
+  //-     +input({mods: "checkbox", isChecked: "true", checkboxLabel: "Можно с питомцами", attrs: { type: "checkbox", id: "pet"} })
+  //-     +input({mods: "checkbox", isChecked: "true", checkboxLabel: "Можно пришасить гостей (до 10 человек)", attrs: { type: "checkbox", id: "guests"} })
+  //-     +input({mods: "radio", checkboxLabel: "Женщина", attrs: { type: "radio", id: "female", name: "sex"} })
+  //-     +input({mods: "radio", checkboxLabel: "Мужчина", attrs: { type: "radio", id: "male", name: "sex"} })
+  //-     //- +input({mods: "checkbox", checkboxLabel: "Можно пришасить гостей (до 10 человек)", attrs: { type: "checkbox", id: "guests"} })
+  //- .form-block.col-3
     | 123
