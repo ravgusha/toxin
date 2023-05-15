@@ -1,9 +1,7 @@
 mixin input(props)
   //- Принимает:
   //-   props {
-  //-     title: ''         {string} - текст с названием (выводится над полем)
   //-     mods: ''          {string} - модификаторы блока
-  //-     helpText: ''      {string} - пояснение над полем
   //-     checkboxLabel: '' {string} - описание чек-бокса 
   //-     isChecked: ''     {boolean}- отмечен ли чек-бокс
   //-     icon: ''          {string} - иконка 
@@ -11,6 +9,7 @@ mixin input(props)
   //-     attrs:            {object} - любые атрибуты для input/textarea
   //-       type:           {string}
   //-       placeholder:    {string}
+  //- }
   -
     if(typeof(props) === 'undefined') {
       let props = {};
@@ -22,21 +21,19 @@ mixin input(props)
         allMods = allMods + ' input_' + modsList[i].trim();
       }
     }
-  form.input(class=allMods)&attributes(attributes)
-    .input__header
-      if (typeof(props.title) !== 'undefined' && props.title)
-        span.text-header-3.input__name!= props.title
-      if (typeof(props.helpText) !== 'undefined' && props.helpText)
-        span.input__help-text!= props.helpText
-    .input__wrap
-      input.input__control(
-        type=typeof props.attrs !== "undefined" && props.attrs.type ? props.attrs.type : "text",
-        value=props.val,
-        checked=props.isChecked
-      )&attributes(props.attrs)
-      if (props.attrs.type === 'checkbox' | props.attrs.type === 'radio')
-        label.text-body(for=`${props.attrs.id}`)= props.checkboxLabel
-      if (typeof(props.icon) !== 'undefined' && props.icon)
-        span.material-icons.input__icon= props.icon
 
-      //- block
+  .input(class=allMods)
+    input.input__control(
+      type=typeof props.attrs !== "undefined" && props.attrs.type ? props.attrs.type : "text",
+      value=props.val,
+      checked=props.isChecked
+    )&attributes(props.attrs)
+    if (props.attrs.type === 'checkbox' | props.attrs.type === 'radio')
+      label.text-body(for=`${props.attrs.id}`)= props.checkboxLabel
+    if (typeof(props.icon) !== 'undefined' && props.icon)
+      span.material-icons.input__icon= props.icon
+
+    script
+      | var propsss = !{ JSON.stringify(props) };
+      | console.log(propsss)
+    //- block

@@ -24,7 +24,6 @@ const likeClick = (e) => {
   }
   console.log(isLiked);
 };
-console.log(likeBtns);
 
 Array.from(likeBtns).forEach((element) => {
   element.addEventListener("click", likeClick);
